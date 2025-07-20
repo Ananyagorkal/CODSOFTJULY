@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <h2>Scientific Calculator</h2>
+
+        <label for="num1">First Number</label>
+        <input type="number" step="any" name="num1" placeholder="Enter first number" required>
+
+        <label for="num2">Second Number (optional)</label>
+        <input type="number" step="any" name="num2" placeholder="Enter second number">
+
+        <label for="operation">Select Operation</label>
+        <select name="operation" required>
+            <option value="+">Add (+)</option>
+            <option value="-">Subtract (-)</option>
+            <option value="*">Multiply (*)</option>
+            <option value="/">Divide (/)</option>
+            <option value="^">Power (x^y)</option>
+            <option value="sqrt">Square Root (√x)</option>
+            <option value="sin">Sine (sin x)</option>
+            <option value="cos">Cosine (cos x)</option>
+            <option value="tan">Tangent (tan x)</option>
+            <option value="log">Logarithm (log x)</option>
+            <option value="mod">Modulus (x % y)</option>
+        </select>
+
+        <button type="submit">Calculate</button>
+
+        {% if result is not none %}
+            <h3>Result: {{ result }}</h3>
+        {% endif %}
+    </form>
+</body>
+</html>
