@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Post</title>
+</head>
+<body>
+    <h1>Add a New Post</h1>
+    <form method="POST">
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Content:</label><br>
+        <textarea name="content" rows="5" required></textarea><br><br>
+
+        <label>Image URL (optional):</label><br>
+        <input type="url" name="image_url" placeholder="https://example.com/image.jpg"><br><br>
+
+        <label>Video URL (optional):</label><br>
+        <input type="url" name="video_url" placeholder="https://youtube.com/watch?v=..."><br><br>
+
+        <button type="submit">Add Post</button>
+    </form>
+</body>
+</html>

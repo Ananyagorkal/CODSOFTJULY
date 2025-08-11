@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p class="date">{{ post.date }}</p>
+        <p>{{ post.content }}</p>
+        <a class="btn" href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>

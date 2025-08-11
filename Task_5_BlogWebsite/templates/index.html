@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Website</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <a href="{{ url_for('add_post') }}">Add New Post</a>
+    <hr>
+
+    {% for post in posts %}
+        <h2><a href="{{ url_for('view_post', post_id=loop.revindex0) }}">{{ post.title }}</a></h2>
+        <p><small>{{ post.date }}</small></p>
+
+        {% if post.image_url %}
+            <img src="{{ post.image_url }}" alt="Post Image" style="max-width:300px; height:auto;">
+        {% endif %}
+
+        {% if post.video_url %}
+            <iframe width="300" height="200" src="{{ post.video_url | replace('watch?v=', 'embed/') }}" frameborder="0" allowfullscreen></iframe>
+        {% endif %}
+
+        <p>{{ post.content[:150] }}...</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
